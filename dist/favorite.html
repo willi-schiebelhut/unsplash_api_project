@@ -1,0 +1,36 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Photostock</title><link rel="stylesheet" href="css/style.min.css"></head><body><main><div class="container"><header class="header"><div class="header__logo"><img src="icons/logo.svg" alt="logo"><div class="header__logo-link">ImageStock</div></div><ul class="header__menu"><li class="header__menu-item header__menu-search"><img src="icons/search.svg" alt="search"> <a href="#" class="header__menu-search">Поиск</a></li></ul></header><div class="header__searchpanel"><input type="text" id="input" placeholder="Поиск" class="header__searchpanel-input"><ul class="header__searchpanel-category"><li><a href="#">Wallpapers</a></li><li><a href="#">Nature</a></li><li><a href="#">People</a></li><li><a href="#">Events</a></li><li><a href="#">Fashion</a></li><li><a href="#">Film</a></li><li><a href="#">Travel</a></li><li><a href="#">Animals</a></li><li><a href="#">Food</a></li><li><a href="#">History</a></li></ul></div><h2 style="text-align: center; margin-top: 60px; font-size: 40px;">Избранное</h2><div class="view"><div><div href="#" class="view__horizontal"><span></span> <span></span></div></div><div><div href="#" class="view__square"><span></span> <span></span> <span></span> <span></span></div></div></div><section class="photo"><div class="fav"></div></section><button class="clear-favorite">Удалить избранное</button><section class="photo"><div class="grid"></div></section></div></main><script>const grid = document.querySelector('.grid'),
+              fav = document.querySelector('.fav'),
+              body = document.querySelector('body'),
+              searchPanel = document.querySelector('.header__searchpanel'),
+              searchButton = document.querySelector('.header__menu-search'),
+              clear = document.querySelector('.clear-favorite');
+        
+        function renderFavorite() {
+            const fav = document.querySelector('.fav');
+            const photo = [];
+            photo[0] = document.createElement('img');
+            photo[0].classList.add('img');
+            photo[0].src = localStorage.getItem('src');
+            fav.appendChild(photo[0]);
+        }
+        renderFavorite();
+               
+
+        clear.addEventListener('click', () => {
+            localStorage.clear();
+            fav.innerHTML = '';
+        });
+
+        function openSearch() {
+        searchButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            searchPanel.style.display = 'flex';
+            searchPanel.classList.add('fade');
+            searchButton.style.display = 'none';
+        });
+        openSearch();
+    }
+        searchButton.addEventListener('click', () => {
+            
+            openSearch();
+        });</script><script src="js/script.js"></script></body></html>

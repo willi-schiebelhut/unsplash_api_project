@@ -1,0 +1,120 @@
+.view {
+    margin: 77px auto;
+    display: flex;
+    width: 56px;
+    justify-content: space-between;
+    width: 56px;
+    height: 23px;
+    div {
+        display: flex;
+    }
+    &__horizontal {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 23px;
+        height: 22px;
+        cursor: pointer;
+        span {
+            display: flex;
+            background-color: grey;
+            width: 23px;
+            height: 10px;
+            transition: .3s all;
+        }
+        &:hover {
+            span {
+                background-color: black;
+                transition: .3s all;
+            }
+            
+        }
+    }
+    &__square {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        cursor: pointer;
+        span {
+            width: 10px;
+            height: 10px;
+            background-color: grey;
+            margin-left: 1px;
+            margin-right: 1px;
+            transition: .3s all;
+        }
+        &:hover {
+            span {
+                background-color: black;
+                transition: .3s all;
+            }
+            
+        }
+    }
+}
+.photo {
+    padding-bottom: 40px;
+}
+.grid, .fav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    object-fit: cover;
+    justify-items: center; 
+}
+.img {
+    width: 300px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    object-fit: cover;
+    transition: .3s all;
+    cursor: pointer;
+    &:hover {
+        transition: .3s all;
+    }
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    object-fit: cover;
+    transition: .3s all;
+    cursor: pointer;
+    &:hover {
+        .button {
+            display: block;
+        }
+    }
+}
+.button {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+.clear-favorite {
+    margin: 20px auto;
+    display: block;
+    background-color: $main-color;
+    color: $text-color;
+    border: none;
+    height: auto;
+    padding: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+//Media
+
+@media (max-width: 767.98px) {
+    .view {
+        margin: 30px auto; 
+    }
+}

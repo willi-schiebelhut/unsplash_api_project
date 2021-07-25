@@ -1,0 +1,170 @@
+.header {
+    background-color: $main-color;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    img {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+
+        &-link {
+            font-size: 24px;
+            color: $text-color;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-around;
+        a {
+            display: flex;
+            color: $text-color;
+            align-items: center;
+            position: relative;
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                display: block;
+                width: 0%;
+                height: 3px;
+                background-color: $text-color;
+                transition: .3s all;
+                bottom: -11px;
+            }
+
+            &:hover {
+                &::after {
+                    width: 30%;
+                }
+            }
+        }
+
+        &-item {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+    }
+
+    &__searchpanel {
+        display: none;
+        min-height: 270px;
+        background-color: $main-color;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &-input {
+            color: $text-color;
+            font-size: 72px;
+            text-align: center;
+            height: 100px;
+            margin-top: 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid $text-color;
+            width: 70%;
+        }
+
+        &-category {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 30px;
+            a {
+                color: $text-color;
+                font-size: 18px;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+//placeholder sytle
+::-webkit-input-placeholder {
+    color: #eee;
+    text-align: center;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #9d9d9d;
+    text-align: center;
+}
+
+:-ms-input-placeholder {
+    color: #9d9d9d;
+    text-align: center;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #9d9d9d;
+    text-align: center;
+}
+
+:focus::-webkit-input-placeholder {
+    color: transparent
+}
+
+:focus::-moz-placeholder {
+    color: transparent
+}
+
+:focus:-moz-placeholder {
+    color: transparent
+}
+
+:focus:-ms-input-placeholder {
+    color: transparent
+}
+
+//Media
+@media (max-width: 767.98px) {
+    .header {
+        &__logo {
+            &-link {
+                display: none;
+            }
+        }
+        &__menu {
+            a {
+                display: none;
+            }
+            &-item {
+                margin-right: 0;
+            }
+        }
+        &__searchpanel {
+            min-height: auto;
+            padding-bottom: 50px;
+            &-input {
+                font-size: 36px;
+                margin-top: 0;
+                height: 55px;
+            }
+        }
+    }
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 0.5s; }
+  
+  @keyframes fade {
+    from {
+      opacity: 0.1; }
+    to {
+      opacity: 1; } }
